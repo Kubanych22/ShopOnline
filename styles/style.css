@@ -1,0 +1,110 @@
+html {
+  /*position: relative;*/
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+p,
+figure,
+fieldset {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img, svg {
+  /*display: block;*/
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+  /*object-fit: contain;*/
+}
+
+.visually-hidden {
+  position: fixed;
+  transform: scale(0);
+}
+
+body {
+  min-width: 320px;
+  min-height: 100%; /* min-height: 100vh ? */
+  font-family: "Arial", sans-serif;
+  font-size: 22px;
+  line-height: 33px;
+  color: #2d2d2d;
+  background-color: #ffffff;
+}
+
+.container {
+  max-width: 1760px;
+  padding: 0 80px;
+  margin: 0 auto;
+}
+
+.container-care {
+  max-width: 700px;
+}
+
+.shoes__title {
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 65px;
+  margin-bottom: 50px;
+}
+
+.shoes__text, .care__text {
+  margin-bottom: 50px;
+}
+
+.shoes__list {
+  margin: 50px 0;
+  padding-left: 20px;
+  font-size: 16px;
+  line-height: 24px;
+  color: #525252;
+}
+
+.care {
+  padding-bottom: 90px;
+}
+
+.care__picture {
+  margin-bottom: 50px;
+}
+
+.care__title {
+  padding-bottom: 14px;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.second-stage {
+  margin-bottom: 50px;
+}
+
+.second-stage:last-child {
+  margin-bottom: 0;
+}
+
+.second-stage__title {
+  margin: 0;
+  font-weight: 400;
+  padding-bottom: 14px;
+}
