@@ -45,7 +45,7 @@ img, svg {
 body {
   min-width: 320px;
   min-height: 100%; /* min-height: 100vh ? */
-  font-family: "Arial", sans-serif;
+  font-family: "Lato", "Arial", sans-serif;
   font-size: 22px;
   line-height: 33px;
   color: #2d2d2d;
@@ -92,7 +92,7 @@ body {
 .care__title {
   padding-bottom: 14px;
   font-size: 22px;
-  font-weight: 700;
+  font-weight: 900;
 }
 
 .second-stage {
