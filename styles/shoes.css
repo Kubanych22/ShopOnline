@@ -1,0 +1,50 @@
+.article {
+  padding: 100px 0 90px 0;
+}
+
+.container-care {
+  max-width: 700px;
+}
+
+.shoes__title {
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 65px;
+  margin-bottom: 50px;
+}
+
+.shoes__text, .care__text {
+  margin-bottom: 50px;
+}
+
+.shoes__list {
+  margin: 50px 0;
+  padding-left: 20px;
+  font-size: 16px;
+  line-height: 24px;
+  color: #525252;
+}
+
+.care__picture {
+  margin-bottom: 50px;
+}
+
+.care__title {
+  padding-bottom: 14px;
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.second-stage {
+  margin-bottom: 50px;
+}
+
+.second-stage:last-child {
+  margin-bottom: 0;
+}
+
+.second-stage__title {
+  margin: 0;
+  font-weight: 400;
+  padding-bottom: 14px;
+}
