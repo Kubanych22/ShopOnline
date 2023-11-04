@@ -5,19 +5,12 @@
 
 .navigation__list {
   display: grid;
-  grid-template-columns:
-    repeat(auto-fit, minmax(max-content, 190px))
-    repeat(auto-fit, minmax(max-content, 151px))
-    repeat(auto-fit, minmax(max-content, 770px))
-    repeat(auto-fit, minmax(max-content, 354px));
-  grid-template-rows: 61px;
-  grid-template-areas: "logo btn form icons";
-  align-items: center;
-  justify-content: space-between;
+  grid-template-columns: 1fr;
 }
 
 .navigation__item_logo {
   grid-area: logo;
+  justify-self: center;
   max-width: 190px;
   width: 190px;
   margin-right: 26px;
