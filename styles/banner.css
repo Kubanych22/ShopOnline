@@ -33,38 +33,36 @@
 }
 
 .offer__timer {
-  max-width: 473px;
+  max-width: max-content;
+  padding: 22px 20px;
   margin: 0 auto;
 }
 
 .timer {
-  display: grid;
-  grid-template-columns: repeat(3, max-content);
-  grid-template-areas: "days hour minute";
-  gap: 0 30px;
+  display: flex;
+  gap: 30px;
 }
 
-.timer__day {
-  grid-area: days;
+.timer__day,
+.timer__hour,
+.timer__minute,
+.timer__seconds {
+  display: flex;
+  align-items: baseline;
 }
 
-.timer__number {
-  display: inline-block;
+.timer__day-number,
+.timer__hour-number,
+.timer__minute-number,
+.timer__seconds-number {
+  display: block;
   margin-right: 6px;
   font-size: 60px;
 }
 
 .timer__word {
-  display: inline-block;
+  display: block;
   font-size: 32px;
-}
-
-.timer__hour {
-  grid-area: hour;
-}
-
-.timer__minute {
-  grid-area: minute;
 }
 
 @media (max-width: 1024px) {
@@ -90,14 +88,17 @@
   }
 
   .offer__timer {
-    max-width: 314px;
+    padding: 20px 25px;
   }
 
   .timer {
-    gap: 0 20px;
+    gap: 20px;
   }
-
-  .timer__number {
+  
+  .timer__day-number,
+  .timer__hour-number,
+  .timer__minute-number,
+  .timer__seconds-number {
     margin-right: 5px;
     font-size: 40px;
   }
@@ -123,14 +124,17 @@
   }
 
   .offer__timer {
-    max-width: 229px;
+    padding: 15px 20px;
   }
 
   .timer {
     gap: 0 10px;
   }
-
-  .timer__number {
+  
+  .timer__day-number,
+  .timer__hour-number,
+  .timer__minute-number,
+  .timer__seconds-number {
     margin-right: 3px;
     font-size: 30px;
   }
@@ -154,14 +158,17 @@
   }
 
   .offer__timer {
-    max-width: 200px;
+    padding: 10px 15px;
   }
 
   .timer {
-    gap: 0 9px;
+    gap: 9px;
   }
-
-  .timer__number {
+  
+  .timer__day-number,
+  .timer__hour-number,
+  .timer__minute-number,
+  .timer__seconds-number {
     margin-right: 2px;
     font-size: 24px;
   }
@@ -188,14 +195,17 @@
   }
 
   .offer__timer {
-    max-width: 167px;
+    padding: 5px 10px;
   }
 
   .timer {
-    gap: 0 8px;
+    gap: 8px;
   }
-
-  .timer__number {
+  
+  .timer__day-number,
+  .timer__hour-number,
+  .timer__minute-number,
+  .timer__seconds-number {
     margin-right: 2px;
     font-size: 20px;
   }
