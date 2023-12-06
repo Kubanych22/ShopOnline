@@ -205,9 +205,9 @@
   }
   .navigation__list {
     grid-template-columns:
-    repeat(auto-fit, minmax(max-content, 190px));
-    repeat(auto-fit, minmax(max-content, 294px));
-    repeat(auto-fit, minmax(max-content, 151px));
+    repeat(auto-fit, minmax(max-content, 190px))
+    repeat(auto-fit, minmax(max-content, 294px))
+    repeat(auto-fit, minmax(max-content, 151px))
     repeat(auto-fit, minmax(max-content, 700px));
     grid-template-rows: 54px 54px;
     grid-template-areas:
@@ -338,6 +338,7 @@
   }
 
   .navigation__list {
+  grid-template-columns:
   repeat(auto-fit, minmax(max-content, 114px))
   repeat(auto-fit, minmax(max-content, 79px))
   repeat(auto-fit, minmax(max-content, 130px))

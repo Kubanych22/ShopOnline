@@ -30,11 +30,9 @@ a {
 
 
 img, svg {
-  /*display: block;*/
+  display: block;
   max-width: 100%;
   height: auto;
-  /*width: 245px;*/
-  /*object-fit: cover;*/
 }
 
 button {

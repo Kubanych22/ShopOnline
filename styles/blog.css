@@ -1,0 +1,29 @@
+.blog__container {
+  padding: 80px 0 192px;
+}
+
+.blog__list {
+  padding: 0 165px;
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  gap: 50px 143px;
+}
+
+.blog__link {
+  display: flex;
+  gap: 30px;
+}
+
+.item__img {
+  width: 195px;
+}
+
+.item__title {
+  max-width: 420px;
+  width: 100%;
+  padding-top: 13px;
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+

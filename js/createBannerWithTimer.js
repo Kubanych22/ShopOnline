@@ -27,7 +27,7 @@ export const createBannerWithTimer = () => {
   const timer = document.createElement('div');
   timer.classList.add('timer');
   
-  timer.dataset.timerDeadline = '2023/11/06 20:23';     // Установка deadline
+  timer.dataset.timerDeadline = '2023/12/06 20:23';     // Установка deadline
   
   const timerDay = document.createElement('div');
   timerDay.classList.add('timer__day');
