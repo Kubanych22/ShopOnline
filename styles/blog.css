@@ -1,3 +1,6 @@
+@import "article.css";
+@import "pagination.css";
+
 .blog__container {
   padding: 80px 0 192px;
 }

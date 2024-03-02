@@ -16,10 +16,12 @@ export const createBannerWithTimer = () => {
   const offerTitle = document.createElement('h2');
   offerTitle.classList.add('offer__title');
   offerTitle.textContent = '-50% на все ноутбуки';
+  offerTitle.setAttribute('tabindex', '0');
   
   const offerText = document.createElement('p');
   offerText.classList.add('offer__text');
   offerText.textContent = 'До конца акции:';
+  offerText.setAttribute('tabindex', '0');
   
   const offerTimer = document.createElement('div');
   offerTimer.classList.add('offer__timer');
@@ -27,7 +29,7 @@ export const createBannerWithTimer = () => {
   const timer = document.createElement('div');
   timer.classList.add('timer');
   
-  timer.dataset.timerDeadline = '2023/12/06 20:23';     // Установка deadline
+  timer.dataset.timerDeadline = '2024/03/06 20:23';     // Установка deadline
   
   const timerDay = document.createElement('div');
   timerDay.classList.add('timer__day');
