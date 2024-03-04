@@ -48,7 +48,12 @@ export const server = () => {
   gulp.watch(['./src/img/**/*.js', './src/fonts/**/*'], copy);
 };
 
-export const clear = async () => await deleteAsync('dist/**/*', {force: true});
+export const clear = (done) => {
+  deleteAsync('dist/**/*', {
+    force: true
+  });
+  done();
+}
 
 
 export const base = gulp.parallel(html, css, js, copy);
