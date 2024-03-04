@@ -1,14 +1,19 @@
 {
   "name": "shoponline",
-  "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "start gulp",
+  "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "vite --open",
-    "build": "vite build",
-    "preview": "vite preview"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "author": "",
+  "license": "ISC",
   "devDependencies": {
-    "vite": "^5.0.0"
+    "browser-sync": "^3.0.2",
+    "del": "^7.1.0",
+    "gulp": "^4.0.2",
+    "gulp-cssimport": "^7.0.0",
+    "localtunnel": "^2.0.2"
   }
 }

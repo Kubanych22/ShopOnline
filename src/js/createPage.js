@@ -17,6 +17,7 @@ export const createPage = (articlesList, btnNum) => {
   blogContainer.classList.add('blog__container');
   const articlesWrapper = document.createElement('ul');
   articlesWrapper.classList.add('blog__list');
+  
   let articleNum = 1;
   const articles = articlesList.map((item) => {
     const article = document.createElement('li');
@@ -35,17 +36,18 @@ export const createPage = (articlesList, btnNum) => {
     article.append(link);
     return article;
   });
+  
   articlesWrapper.append(...articles);
   blogContainer.append(articlesWrapper);
   container.append(blogContainer);
   
   const navigation = document.createElement('div');
-  navigation.classList.add('navigation');
+  navigation.classList.add('nav');
   const navigationPrev = document.createElement('button');
-  navigationPrev.classList.add('navigation__prev');
+  navigationPrev.classList.add('nav__prev');
   navigationPrev.type = 'button';
   navigationPrev.innerHTML = `
-    <svg class="navigation__prev-img" xmlns="http://www.w3.org/2000/svg" width="37" height="37"
+    <svg class="nav__prev-img" xmlns="http://www.w3.org/2000/svg" width="37" height="37"
          viewBox="0 0 37 37" fill="none">
       <path
         d="M32.375 16.9583H10.5296L16.0487 11.4237L13.875 9.25L4.625 18.5L13.875 27.75L16.0487 25.5763L10.5296 20.0417H32.375V16.9583Z"
@@ -54,30 +56,30 @@ export const createPage = (articlesList, btnNum) => {
   `;
   
   const navigationList = document.createElement('ul');
-  navigationList.classList.add('navigation__list');
+  navigationList.classList.add('nav__list');
   const navigationItemFirst = document.createElement('li');
-  navigationItemFirst.classList.add('navigation__item');
+  navigationItemFirst.classList.add('nav__item');
   
   const navigationBtnFirst = document.createElement('button');
-  navigationBtnFirst.classList.add('navigation__btn', 'navigation__btn_first');
+  navigationBtnFirst.classList.add('nav__btn', 'nav__btn_first');
   
   const navigationItemSecond = document.createElement('li');
-  navigationItemSecond.classList.add('navigation__item');
+  navigationItemSecond.classList.add('nav__item');
   const navigationBtnSecond = document.createElement('button');
-  navigationBtnSecond.classList.add('navigation__btn', 'navigation__btn_second');
+  navigationBtnSecond.classList.add('nav__btn', 'nav__btn_second');
   
   const navigationItemThird = document.createElement('li');
-  navigationItemThird.classList.add('navigation__item');
+  navigationItemThird.classList.add('nav__item');
   const navigationBtnThird = document.createElement('button');
-  navigationBtnThird.classList.add('navigation__btn', 'navigation__btn_third');
+  navigationBtnThird.classList.add('nav__btn', 'nav__btn_third');
   if (check(btnNum, 1)) {
-    navigationBtnFirst.classList.add('navigation__btn_active')
+    navigationBtnFirst.classList.add('nav__btn_active');
   }
   if (check(btnNum, 2)) {
-    navigationBtnSecond.classList.add('navigation__btn_active')
+    navigationBtnSecond.classList.add('nav__btn_active');
   }
   if (check(btnNum, 3)) {
-    navigationBtnThird.classList.add('navigation__btn_active')
+    navigationBtnThird.classList.add('nav__btn_active');
   }
   
   navigationItemFirst.append(navigationBtnFirst);
@@ -87,10 +89,10 @@ export const createPage = (articlesList, btnNum) => {
   navigationList.append(navigationItemFirst, navigationItemSecond, navigationItemThird);
   
   const navigationNext = document.createElement('button');
-  navigationNext.classList.add('navigation__next');
+  navigationNext.classList.add('nav__next');
   navigationNext.type = 'button';
   navigationNext.innerHTML = `
-    <svg class="navigation__next-img" xmlns="http://www.w3.org/2000/svg" width="37" height="37"
+    <svg class="nav__next-img" xmlns="http://www.w3.org/2000/svg" width="37" height="37"
          viewBox="0 0 37 37" fill="none">
       <path
         d="M4.625 16.9583H26.4704L20.9513 11.4237L23.125 9.25L32.375 18.5L23.125 27.75L20.9513 25.5763L26.4704 20.0417H4.625V16.9583Z"
@@ -104,12 +106,15 @@ export const createPage = (articlesList, btnNum) => {
   
   blog.append(container);
   
-  document.body.append(blog);
-  
+  const main = document.querySelector('main');
+    main.innerHTML = ''
+    main.append(blog);
+    
   return {
+    main,
     blog,
     navigationBtnFirst,
     navigationBtnSecond,
     navigationBtnThird,
   };
-}
+};

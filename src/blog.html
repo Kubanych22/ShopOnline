@@ -1,24 +1,13 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <link rel="preload" href="fonts/opensans-regular.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="fonts/lato-regular.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="fonts/lato-bold.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="fonts/lato-black.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="icon" type="image/png" href="img/logo.png">
-  
-  <title>ShopOnline. Module 7.</title>
-  
-  <link rel="stylesheet" href="styles/style.css">
-  
-  <script src="js/index.js" type="module"></script>
+  <title>Статьи блога</title>
+  <link rel="stylesheet" href="styles/index.css">
+  <script src="js/blog.js" type="module"></script>
 </head>
-
 <body>
   <header class="header">
     <div class="container header__container">
@@ -82,154 +71,21 @@
           </li>
         </ul>
       </nav>
+      
+      <ul class="breadcrumbs" id="breadcrumbs">
+        <li class="breadcrumbs-item">
+          <a class="breadcrumbs-link" href="index.html">Главная</a>
+        </li>
+        <li class="breadcrumbs-item">
+          <a class="breadcrumbs-link">Блог</a>
+        </li>
+      </ul>
+      
     </div>
   </header>
-  <main class="main">
-    <section class="promotion">
-      <h2 class="visually-hidden">Рекламный блок</h2>
-      <div class="container promotion-container">
-        <ul class="promotion__list">
-          <li class="promotion__item item-01">
-            <a class="promotion__link" href="#">
-              <img class="promotion__img" src="img/promotion__img-01.jpg" alt="Книга – лучший подарок">
-            </a>
-          </li>
-          <li class="promotion__item item-02">
-            <a class="promotion__link" href="#">
-              <img class="promotion__img" src="img/promotion__img-02.jpg" alt="Время скидок!">
-            </a>
-          </li>
-          <li class="promotion__item item-03">
-            <a class="promotion__link" href="#">
-              <img class="promotion__img" src="img/promotion__img-03.jpg" alt="Вторая пара кроссовок в подарок!">
-            </a>
-          </li>
-          <li class="promotion__item item-04">
-            <a class="promotion__link" href="#">
-              <img class="promotion__img" src="img/promotion__img-04.jpg" alt="Идеи новогодних подарков">
-            </a>
-          </li>
-          <li class="promotion__item item-05">
-            <a class="promotion__link" href="#">
-              <img class="promotion__img" src="img/promotion__img-05.jpg" alt="Спортивная обувь">
-            </a>
-          </li>
-          <li class="promotion__item item-06">
-            <a class="promotion__link" href="#">
-              <img class="promotion__img" src="img/promotion__img-06.jpg" alt="Выгодно в декабре!">
-            </a>
-          </li>
-          <li class="promotion__item item-07">
-            <a class="promotion__link" href="#">
-              <img class="promotion__img" src="img/promotion__img-07.jpg" alt="Новогодние украшения">
-            </a>
-          </li>
-          <li class="promotion__item item-08">
-            <a class="promotion__link" href="#">
-              <img class="promotion__img" src="img/promotion__img-08.jpg" alt="Женское платье">
-            </a>
-          </li>
-          <li class="promotion__item item-09">
-            <a class="promotion__link" href="#">
-              <img class="promotion__img" src="img/promotion__img-09.jpg" alt="На бытовую химию">
-            </a>
-          </li>
-          <li class="promotion__item item-10">
-            <a class="promotion__link" href="#">
-              <img class="promotion__img" src="img/promotion__img-10.jpg" alt="Новогодние игрушки">
-            </a>
-          </li>
-        </ul>
-      </div>
-    </section>
-    <section class="additional">
-      <div class="container additional-container">
-        <h2 class="additional__title">Это выгодно!</h2>
-        <ul class="additional__list">
-          <li class="additional__item product item-01">
-            <a class="product__link" href="#">
-              <img class="product__img" src="img/product-1.svg" alt="Пара футболок">
-            </a>
-            <p class="product__prices">
-              <span class="product__price">1299 ₽</span>
-              <span class="product__old-price">2598 ₽</span>
-            </p>
-            <a class="product__name" href="#">Пара футболок</a>
-          </li>
-          <li class="additional__item product item-02">
-            <a class="product__link" href="#">
-              <img class="product__img" src="img/product-2.svg" alt="Кроссовки">
-            </a>
-            <p class="product__prices">
-              <span class="product__price">2099 ₽</span>
-              <span class="product__old-price">5938 ₽</span>
-            </p>
-            <a class="product__name" href="#">Кроссовки</a>
-          </li>
-          <li class="additional__item product item-03">
-            <a class="product__link" href="#">
-              <img class="product__img" src="img/product-3.svg" alt="Постельное бельё">
-            </a>
-            <p class="product__prices">
-              <span class="product__price">3902 ₽</span>
-              <span class="product__old-price">4490 ₽</span>
-            </p>
-            <a class="product__name" href="#">Постельное бельё</a>
-          </li>
-          <li class="additional__item product item-04">
-            <a class="product__link" href="#">
-              <img class="product__img" src="img/product-4.svg" alt="Фен">
-            </a>
-            <p class="product__prices">
-              <span class="product__price">2999 ₽</span>
-              <span class="product__old-price">6030 ₽</span>
-            </p>
-            <a class="product__name" href="#">Фен</a>
-          </li>
-          <li class="additional__item product item-05">
-            <a class="product__link" href="#">
-              <img class="product__img" src="img/product-3.svg" alt="Постельное бельё">
-            </a>
-            <p class="product__prices">
-              <span class="product__price">3902 ₽</span>
-              <span class="product__old-price">4490 ₽</span>
-            </p>
-            <a class="product__name" href="#">Постельное бельё</a>
-          </li>
-          <li class="additional__item product item-06">
-            <a class="product__link" href="#">
-              <img class="product__img" src="img/product-4.svg" alt="Фен">
-            </a>
-            <p class="product__prices">
-              <span class="product__price">2999 ₽</span>
-              <span class="product__old-price">6030 ₽</span>
-            </p>
-            <a class="product__name" href="#">Фен</a>
-          </li>
-          <li class="additional__item product item-07">
-            <a class="product__link" href="#">
-              <img class="product__img" src="img/product-5.svg" alt="Варежки-мишки">
-            </a>
-            <p class="product__prices">
-              <span class="product__price">540 ₽</span>
-              <span class="product__old-price">890 ₽</span>
-            </p>
-            <a class="product__name" href="#">Варежки-мишки</a>
-          </li>
-          <li class="additional__item product item-08">
-            <a class="product__link" href="#">
-              <img class="product__img" src="img/product-1.svg" alt="Пара футболок">
-            </a>
-            <p class="product__prices">
-              <span class="product__price">1299 ₽</span>
-              <span class="product__old-price">2598 ₽</span>
-            </p>
-            <a class="product__name" href="#">Пара футболок</a>
-          </li>
-        </ul>
-      </div>
-    </section>
-  </main>
+  
+  <main></main>
+  
   <footer class="footer">
     <div class="container footer-container">
       <div class="footer__wrap">
@@ -363,5 +219,4 @@
     </div>
   </footer>
 </body>
-
 </html>

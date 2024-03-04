@@ -1,16 +1,23 @@
 import {createPage} from './createPage.js';
 import {showArticle} from './showArticle.js';
+import preload from './preload.js';
 
 export const getArticles = async (numPage) => {
   const response = await fetch(`https://gorest.co.in/public-api/posts?page=${numPage}`);
   return await response.json();
 };
 
-let currentPage = 1;
+export let currentPage = 1;
 let numPage = 1;
 
 export const renderPostsPage = async () => {
+  const main = document.querySelector('main')
+  main.style.minHeight = '2000px';
+  preload.show();
   const posts = await getArticles(numPage);
+  main.style.minHeight = 'auto';
+  preload.remove();
+  
   const articlesList = posts.data;
   const page = createPage(articlesList, numPage);
   let navBtnFirst = page.navigationBtnFirst;
@@ -24,18 +31,18 @@ export const renderPostsPage = async () => {
   const paginationIncrease = async (e) => {
     e.preventDefault();
     
-    if (navBtnFirst.classList.contains('navigation__btn_active')) {
-      navBtnFirst.classList.remove('navigation__btn_active');
+    if (navBtnFirst.classList.contains('nav__btn_active')) {
+      navBtnFirst.classList.remove('nav__btn_active');
       numPage++;
     }
     
-    if (navBtnSecond.classList.contains('navigation__btn_active')) {
-      navBtnSecond.classList.remove('navigation__btn_active');
+    if (navBtnSecond.classList.contains('nav__btn_active')) {
+      navBtnSecond.classList.remove('nav__btn_active');
       numPage++;
     }
     
-    if (navBtnThird.classList.contains('navigation__btn_active')) {
-      navBtnThird.classList.remove('navigation__btn_active');
+    if (navBtnThird.classList.contains('nav__btn_active')) {
+      navBtnThird.classList.remove('nav__btn_active');
       numPage++;
       currentPage = numPage;
     }
@@ -55,18 +62,18 @@ export const renderPostsPage = async () => {
       currentPage -= 3;
     }
     
-    if (navBtnFirst.classList.contains('navigation__btn_active')) {
-      navBtnFirst.classList.remove('navigation__btn_active');
+    if (navBtnFirst.classList.contains('nav__btn_active')) {
+      navBtnFirst.classList.remove('nav__btn_active');
       numPage--;
     }
     
-    if (navBtnSecond.classList.contains('navigation__btn_active')) {
-      navBtnSecond.classList.remove('navigation__btn_active');
+    if (navBtnSecond.classList.contains('nav__btn_active')) {
+      navBtnSecond.classList.remove('nav__btn_active');
       numPage--;
     }
     
-    if (navBtnThird.classList.contains('navigation__btn_active')) {
-      navBtnThird.classList.remove('navigation__btn_active');
+    if (navBtnThird.classList.contains('nav__btn_active')) {
+      navBtnThird.classList.remove('nav__btn_active');
       numPage--;
     }
     
@@ -76,8 +83,8 @@ export const renderPostsPage = async () => {
     showArticle();
   };
   
-  const nextBtn = document.querySelector('.navigation__next');
-  const prevBtn = document.querySelector('.navigation__prev');
+  const nextBtn = document.querySelector('.nav__next');
+  const prevBtn = document.querySelector('.nav__prev');
   nextBtn.addEventListener('click', paginationIncrease);
   prevBtn.addEventListener('click', paginationDecrease);
 };

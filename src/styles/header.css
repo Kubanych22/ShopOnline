@@ -160,20 +160,57 @@
   gap: 4px;
 }
 
+.breadcrumbs {
+  padding-top: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 21px;
+  color: #525252;
+  list-style-type: none;
+}
+
+.breadcrumbs-item {
+  position: relative;
+  margin-right: 26px;
+  list-style-type: none;
+}
+
+.breadcrumbs-item::after {
+  content: "";
+  position: absolute;
+  top: 1px;
+  right: -22px;
+  width: 18px;
+  height: 18px;
+  background-image: url("../img/arrow_right.svg");
+  background-repeat: no-repeat;
+  
+  /*background-color: #242424;*/
+  
+  /*transform: rotate(45deg);*/
+}
+
+.breadcrumbs-item:last-child::after {
+  content: none;
+}
+
 @media (max-width: 1600px) {
   .navigation__item_logo {
     margin-right: 0;
   }
-
+  
   .icons__list {
     gap: 50px;
   }
-
+  
   .form__btn {
     padding-left: 65px;
     padding-right: 35px;
   }
-
+  
   .navigation__form {
     max-width: 600px;
   }
@@ -183,15 +220,15 @@
   .navigation__list {
     gap: 0;
   }
-
+  
   .navigation__item_logo {
     font-size: 26px;
   }
-
+  
   .navigation__form {
     max-width: 400px;
   }
-
+  
   .icons__list {
     font-size: 14px;
     gap: 10px;
@@ -203,6 +240,7 @@
     padding-top: 34px;
     padding-bottom: 30px;
   }
+  
   .navigation__list {
     grid-template-columns:
     repeat(auto-fit, minmax(max-content, 190px))
@@ -215,27 +253,27 @@
       "btn form";
     gap: 34px 0;
   }
-
+  
   .navigation__item {
     max-height: 54px;
   }
-
+  
   .navigation__form {
     max-width: 700px;
   }
-
+  
   .form__btn {
     margin-left: -92px;
   }
-
+  
   .navigation__menu {
     justify-self: start;
   }
-
+  
   .icons {
     justify-self: end;
   }
-
+  
   .icons__list {
     gap: 0 40px;
   }
@@ -245,13 +283,13 @@
   .navigation__form {
     max-width: 540px;
   }
-
+  
   .navigation__menu-btn {
     max-width: 115px;
     padding-left: 45px;
     font-size: 18px;
   }
-
+  
   .navigation__menu-btn:after {
     top: 13px;
     left: 15px;
@@ -263,47 +301,47 @@
     padding-top: 25px;
     padding-bottom: 25px;
   }
-
+  
   .navigation__list {
     gap: 30px 0;
   }
-
+  
   .navigation__item {
     max-height: 42px;
   }
-
+  
   .navigation__item_logo {
     max-width: 165px;
     font-size: 26px;
     line-height: 35px;
   }
-
+  
   .navigation__menu {
     max-width: 115px;
     justify-self: start;
   }
-
+  
   .navigation__menu-btn {
     font-size: 16px;
     line-height: 24px;
   }
-
+  
   .navigation__form {
     justify-self: start;
     width: 60vw;
   }
-
+  
   .form__input {
     font-size: 12px;
     line-height: 16px;
     padding-left: 30px;
   }
-
+  
   .icons {
     width: 50vw;
     justify-self: end;
   }
-
+  
   .icons__list {
     font-size: 12px;
     line-height: 16px;
@@ -316,16 +354,16 @@
   .navigation__list {
     gap: 20px 0;
   }
-
+  
   .navigation__form {
     justify-self: start;
     width: 50vw;
   }
-
+  
   .icons {
     width: 40vw;
   }
-
+  
   .icons__list {
     margin-left: calc(40vw - 200px);
   }
@@ -336,9 +374,9 @@
     padding-top: 20px;
     padding-bottom: 20px;
   }
-
+  
   .navigation__list {
-  grid-template-columns:
+    grid-template-columns:
   repeat(auto-fit, minmax(max-content, 114px))
   repeat(auto-fit, minmax(max-content, 79px))
   repeat(auto-fit, minmax(max-content, 130px))
@@ -350,17 +388,17 @@
       "form .";
     justify-content: start;
   }
-
+  
   .navigation__item {
     max-height: 30px;
   }
-
+  
   .navigation__item_logo {
     max-width: 114px;
     font-size: 18px;
     line-height: 35px;
   }
-
+  
   .navigation__menu-btn {
     width: 79px;
     height: 30px;
@@ -368,23 +406,23 @@
     font-size: 12px;
     border-radius: 4px;
   }
-
+  
   .navigation__menu-btn:after {
     top: 0;
     left: -50px;
     background-position: center;
     background-size: 14px 14px;
   }
-
+  
   .navigation__form {
     width: calc(91vw - 78px);
   }
-
+  
   .form__input {
     height: 30px;
     font-size: 8px;
   }
-
+  
   .form__btn {
     height: 30px;
     max-width: 60px;
@@ -393,40 +431,40 @@
     padding-left: 20px;
     padding-right: 20px;
   }
-
+  
   .form__btn:after {
     top: -2px;
     left: 3px;
     background-position: center;
     background-size: 20px 20px;
   }
-
+  
   .icons {
     max-width: 30vw;
     justify-self: start;
     margin-left: calc(-28vw + 60px);
   }
-
+  
   .icons__list {
     gap: 20px;
     justify-content: end;
   }
-
+  
   .icons__item {
     max-width: 30px;
     height: 30px;
   }
-
+  
   .icon-profile__svg, .icon-favorite {
     width: 30px;
     height: 30px;
   }
-
+  
   .icon-cart {
     width: 25px;
     height: 25px;
   }
-
+  
   .icons__item p {
     display: none;
   }
