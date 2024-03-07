@@ -1,0 +1,28 @@
+@font-face {
+  @include font('Open Sans', 'regular');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  @include font('Open Sans', 'bold');
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  @include font('Lato', 'regular');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  @include font('Lato', 'bold');
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
