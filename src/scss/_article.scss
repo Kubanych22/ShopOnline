@@ -2,15 +2,18 @@
   padding-top: 80px;
   display: flex;
 
-  @media (max-width: 1024px) {
+  // применение миксина
+  @include mediaQuery(1024) {
     padding-top: 30px;
   }
 
-  @media (max-width: 768px) {
+  // применение миксина
+  @include mediaQuery(768) {
     padding-top: 25px;
   }
 
-  @media (max-width: 480px) {
+  // применение миксина
+  @include mediaQuery(480){
     padding-top: 10px;
   }
 

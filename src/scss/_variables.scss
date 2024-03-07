@@ -6,19 +6,3 @@ $color-breadcrumbs: #525252;
 
 $font-main: Lato;
 $font-secondary: 'Open Sans';
-
-@function remove-spaces($str) {
-  @while (str-index($str, ' ') != null) {
-    $index: str-index($str, ' ');
-    $str: "#{str-slice($str, 0, $index - 1)}#{str-slice($str, $index + 1)}";
-  }
-  @return unquote(to-lower-case($str));
-}
-
-@mixin font($name, $weight) {
-  font: {
-    family: $name;
-  }
-  src: url('../fonts/#{remove-spaces($name)}-#{$weight}.woff2') format('woff2'),
-  url('../fonts/#{remove-spaces($name)}-#{$weight}.woff') format('woff');
-}
