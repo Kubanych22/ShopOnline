@@ -60,7 +60,7 @@
       left: 30px;
       bottom: 0;
       right: 0;
-      background-image: url("../img/menu-btn.svg");
+      background-image: url("../img/close-menu-btn.svg");
       background-repeat: no-repeat;
     }
   }
@@ -68,6 +68,13 @@
   &__form {
     margin-right: auto;
     grid-area: form;
+  }
+}
+
+.close-btn {
+  &:after {
+    background-image: url("../img/menu-btn.svg");
+    background-repeat: no-repeat;
   }
 }
 

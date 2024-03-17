@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Статьи блога</title>
   <link rel="stylesheet" href="css/index.css">
-  <script src="js/blog.js" type="module"></script>
+  <script src="js/blog.min.js" type="module"></script>
 </head>
 <body>
   <header class="header">
@@ -19,7 +19,7 @@
             </p>
           </li>
           <li class="navigation__item navigation__menu">
-            <button class="navigation__menu-btn btn" type="button">Меню</button>
+            <button class="navigation__menu-btn btn close-btn" type="button">Меню</button>
           </li>
           <li class="navigation__item navigation__form">
             <form class="form">
@@ -70,6 +70,68 @@
             </ul>
           </li>
         </ul>
+        <div class="menu">
+          <div class="menu__wrap">
+            <div class="menu__catalog catalog" tabindex="0">
+              <h3 class="catalog__title">Каталог</h3>
+              <ul class="catalog__list">
+                <li class="catalog__item">
+                  <a href="#">Смартфоны</a>
+                </li>
+                <li class="catalog__item">
+                  <a href="#">Бытовая химия</a>
+                </li>
+                <li class="catalog__item">
+                  <a href="#">Ноутбуки</a>
+                </li>
+                <li class="catalog__item">
+                  <a href="#">Книги и журналы</a>
+                </li>
+                <li class="catalog__item">
+                  <a href="#">Ювелирные изделия</a>
+                </li>
+                <li class="catalog__item">
+                  <a href="#">Домашний текстиль</a>
+                </li>
+                <li class="catalog__item">
+                  <a href="#">Одежда</a>
+                </li>
+                <li class="catalog__item">
+                  <a href="#">Электроника</a>
+                </li>
+                <li class="catalog__item">
+                  <a href="#">Бытовая техника</a>
+                </li>
+                <li class="catalog__item">
+                  <a href="#">Косметика</a>
+                </li>
+              </ul>
+            </div>
+            <div class="menu__customers customers" tabindex="0">
+              <h3 class="customers__title">Покупателям</h3>
+              <ul class="customers__list">
+                <li class="customers__item">
+                  <a href="#">Оплата заказа</a>
+                </li>
+                <li class="customers__item">
+                  <a href="#">Условия доставки</a>
+                </li>
+                <li class="customers__item">
+                  <a href="#">Условия возврата заказа</a>
+                </li>
+                <li class="customers__item">
+                  <a href="#">Блог</a>
+                </li>
+              </ul>
+            </div>
+            <div class="menu__contacts contacts" tabindex="0">
+              <h3 class="contacts__title">Связаться с нами</h3>
+              <p class="contacts__info">
+                <a href="#">Контакты</a>
+              </p>
+            </div>
+          </div>
+        </div>
       </nav>
       
       <ul class="breadcrumbs" id="breadcrumbs">
@@ -80,7 +142,6 @@
           <a class="breadcrumbs__link">Блог</a>
         </li>
       </ul>
-      
     </div>
   </header>
   

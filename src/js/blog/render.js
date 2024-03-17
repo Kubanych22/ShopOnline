@@ -1,6 +1,6 @@
 import {createPage} from './createPage.js';
 import {showArticle} from './showArticle.js';
-import preload from './preload.js';
+import preload from '../index/preload.js';
 
 export const getArticles = async (numPage) => {
   const response = await fetch(`https://gorest.co.in/public-api/posts?page=${numPage}`);
