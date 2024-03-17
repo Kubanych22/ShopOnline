@@ -4,7 +4,16 @@
 }
 
 .offer {
-  background-image: url("../img/banner.jpg");
+  background-image: url("../img/banner.jpg"),
+  image-set(
+    url("../img/banner.avif") 1x,
+    url("../img/banner.webp") 1x,
+    url("../img/banner.jpg") 1x
+  ),
+  -webkit-image-set(
+    url("../img/banner.avif") 1x,
+    url("../img/banner.webp") 1x
+  );
   background-repeat: no-repeat;
   background-position: center;
   font-weight: 700;
