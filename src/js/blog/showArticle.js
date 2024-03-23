@@ -28,9 +28,15 @@ const createArticlePage = (post) => {
     }
     
     const breadcrumbs = document.querySelector('.breadcrumbs');
-    const link = breadcrumbs.children[1].querySelector('.breadcrumbs__link');
+    let li = breadcrumbs.children[2];
+    const link  = document.createElement('a');
+    link.classList.add('breadcrumbs__link')
     link.href = 'blog.html';
-    const li = document.createElement('li');
+    link.textContent = li.textContent;
+    li.textContent = '';
+    li.append(link);
+    
+    li = document.createElement('li');
     li.classList.add('breadcrumbs__item');
     li.textContent = `${docTitle}`;
     breadcrumbs.append(li);

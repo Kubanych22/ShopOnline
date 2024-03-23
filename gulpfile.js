@@ -19,6 +19,9 @@ import webpackStream from 'webpack-stream';
 import webpack from 'webpack';
 import rename from 'gulp-rename';
 
+import autoprefixer from 'gulp-autoprefixer';
+import babel from 'gulp-babel';
+
 const prepros = true; // false если нужно обработать css-файлы
 
 let isDev = false;
@@ -27,6 +30,7 @@ const PATHS = {
   src: {
     js: 'src/js/**/*.js',
     blog: 'src/js/blog/**/*.js',
+    goods: 'src/js/goods/**/*.js',
     index: 'src/js/index/**/*.js',
   },
   dict: {
@@ -53,6 +57,7 @@ export const style = () => {
       .src('src/scss/**/index.scss')
       .pipe(gulpif(isDev, sourcemaps.init()))
       .pipe(sass().on('error', sass.logError))
+      .pipe(autoprefixer())
       .pipe(cleanCSS({
         2: {
           specialComments: 0,
@@ -68,6 +73,7 @@ export const style = () => {
     .pipe(gulpCssImport({
       extensions: ['css'],
     }))
+    .pipe(autoprefixer())
     .pipe(cleanCSS({
       2: {
         specialComments: 0,
@@ -105,17 +111,25 @@ const webpackConf1 = webpackConf('index.js');
 if (!isDev) {
   webpackConf1.module.rules.push({
     test: /\.(js)$/,
-    exclude: [/node_modules/, /PATHS.src.blog/],
+    exclude: [/node_modules/, /PATHS.src.blog/, /PATHS.src.goods/],
     loader: 'babel-loader',
   })
-  
 }
-const webpackConf2 = webpackConf('blog.js');
 
+const webpackConf2 = webpackConf('blog.js');
 if (!isDev) {
   webpackConf2.module.rules.push({
     test: /\.(js)$/,
     exclude: [/node_modules/, /PATHS.src.index/],
+    loader: 'babel-loader',
+  })
+}
+
+const webpackConf3 = webpackConf('goods.js');
+if (!isDev) {
+  webpackConf2.module.rules.push({
+    test: /\.(js)$/,
+    exclude: [/node_modules/, /PATHS.src.index/, /PATHS.src.blog/],
     loader: 'babel-loader',
   })
 }
@@ -126,6 +140,10 @@ export const js = () => gulp
   .pipe(plumber())
   .pipe(webpackStream(webpackConf1, webpack))
   .pipe(gulpif(!isDev, gulp.dest(PATHS.dict.js)))
+  .pipe(babel({
+    presets: ['@babel/preset-env'],
+    ignore: ['src/js/**/*.min.js']
+  }))
   .pipe(gulpif(!isDev, terser()))
   .pipe(
     rename({
@@ -140,6 +158,28 @@ export const jsBlog = () => gulp
   .pipe(plumber())
   .pipe(webpackStream(webpackConf2, webpack))
   .pipe(gulpif(!isDev, gulp.dest(PATHS.dict.js)))
+  .pipe(babel({
+    presets: ['@babel/preset-env'],
+    ignore: ['src/js/**/*.min.js']
+  }))
+  .pipe(gulpif(!isDev, terser()))
+  .pipe(
+    rename({
+      suffix: '.min',
+    }),
+  )
+  .pipe(gulp.dest(PATHS.dict.js))
+  .pipe(browserSync.stream());
+
+export const jsGoods = () => gulp
+  .src(PATHS.src.goods)
+  .pipe(plumber())
+  .pipe(webpackStream(webpackConf3, webpack))
+  .pipe(gulpif(!isDev, gulp.dest(PATHS.dict.js)))
+  .pipe(babel({
+    presets: ['@babel/preset-env'],
+    ignore: ['src/js/**/*.min.js']
+  }))
   .pipe(gulpif(!isDev, terser()))
   .pipe(
     rename({
@@ -230,7 +270,7 @@ export const develop = async () => {
   isDev = true;
 };
 
-export const base = gulp.parallel(html, style, js, jsBlog, img, avif, webp, copy);
+export const base = gulp.parallel(html, style, js, jsBlog, jsGoods, img, avif, webp, copy);
 export const build = gulp.series(clear, base, criticalCSS);
 
 export const dev = gulp.series(develop, base);

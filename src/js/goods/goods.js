@@ -1,13 +1,10 @@
-import {renderPostsPage} from './render.js';
-import {showArticle} from './showArticle.js';
-
 const menuBtn = document.querySelector('.navigation__menu-btn');
 const menu = document.querySelector('.menu');
-
 menuBtn.addEventListener('click', (evt) => {
   evt.preventDefault();
   menuBtn.classList.toggle('close-btn');
   menu.classList.toggle('open');
+  
   const menuListWrap = menu.querySelector('.menu__wrap');
   const menuList = menuListWrap.children;
   for (const item of menuList) {
@@ -25,14 +22,7 @@ menuBtn.addEventListener('click', (evt) => {
   }
 });
 
-const renderBlog = async () => {
-  await renderPostsPage();
-  showArticle();
-};
-
-await renderBlog();
-
-const breadcrumbs = () => {
+const createBreadcrumbs = () => {
   const nav = document.querySelector('.navigation');
   const breadcrumbsList = document.createElement('ul');
   breadcrumbsList.classList.add('breadcrumbs')
@@ -62,7 +52,7 @@ const breadcrumbs = () => {
       }
       href.push(url[i])
     }
-    
+   
     const paths = location.href.split('/').slice(3);
     const path = paths[0]
     if (href.toString().includes(path.toString())) {
@@ -80,4 +70,9 @@ const breadcrumbs = () => {
     }
   }
 }
-breadcrumbs()
+
+const goods = () => {
+  createBreadcrumbs();
+}
+
+goods();
